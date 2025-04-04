@@ -18,6 +18,7 @@ Frontend (Next.js)
 ✅ TailwindCSS – For modern UI
 ✅ Zustand / Redux – State management (optional)
 ✅ Framer Motion – Animations
+
 Backend (Express.js)
 
 ✅ Node.js + Express.js – REST API
@@ -37,28 +38,40 @@ Hosting & DevOps
 📁 Folder Structure (Full-Stack SaaS)
 
 branding-toolkit/
-│── backend/                    # Express.js Backend
-│   ├── controllers/             # API Controllers
-│   ├── models/                  # Database Models
-│   ├── routes/                  # Express Routes
-│   ├── middlewares/             # Auth, Logging, CORS, etc.
-│   ├── services/                # AI & Business Logic
-│   ├── config/                  # Environment Configs
-│   │   ├── config.js            # Load environment variables
-│   ├── server.js                # Main Express Server
-│   ├── package.json             # Backend Dependencies
-│   ├── .env                     # Backend Environment Variables (Private)
-│── frontend/                    # Next.js 15 Frontend
-│   ├── src/                     
-│   │   ├── app/                 # Next.js App Router
-│   │   ├── components/          # UI Components
-│   │   ├── lib/                 # API Calls & Utilities
-│   │   ├── styles/              # Global Styles
-│   ├── next.config.js           # Next.js Config
-│   ├── package.json             # Frontend Dependencies
-│   ├── .env.local               # Frontend Environment Variables (Public)
-│── .env                         # (Optional) Global Environment Variables
-│── README.md                    # Documentation
+│
+├── backend/                    # Express.js backend
+│   ├── controllers/            # Business logic
+│   ├── routes/                 # API routes (auth, branding)
+│   ├── models/                 # DB models (users, branding_projects, assets)
+│   ├── middlewares/           # JWT auth, error handling, etc.
+│   ├── services/              # OpenAI, DALL·E logic
+│   ├── config/                # DB, env, etc.
+│   ├── server.js              # Entry point
+│   ├── .env                   # Secrets
+│   └── package.json
+│
+├── frontend/                  # Angular v19 frontend (standalone components)
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── features/
+│   │   │   │   ├── auth/           # login, register
+│   │   │   │   ├── dashboard/      # dashboard layout
+│   │   │   │   │   ├── branding-projects/
+│   │   │   │   │   ├── assets/
+│   │   │   │   │   └── dashboard.routes.ts
+│   │   │   ├── core/              # services (auth, branding.service.ts), guards
+│   │   │   ├── shared/            # UI components
+│   │   │   ├── app.routes.ts      # route setup
+│   │   │   └── app.config.ts      # provideRouter(), etc.
+│   │   └── main.ts
+│   ├── tailwind.config.js
+│   ├── angular.json
+│   └── package.json
+│
+├── README.md
+├── .gitignore
+└── .env (Optional shared)
+
 
 
 📌 Prototypes & Features
